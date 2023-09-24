@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "737687514093",
+    "project_id": "azume-try",
+    "storage_bucket": "azume-try.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:737687514093:android:26ac440d5bbad1183995e4",
+        "android_client_info": {
+          "package_name": "com.example.mentorup_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "737687514093-v7uhflsfke5kortt6s1gov9fkem2mqdl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDM_hcACcs0Ogc-JXWuoPJ5-ezlxv8_5no"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "737687514093-v7uhflsfke5kortt6s1gov9fkem2mqdl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "737687514093-bjsue2lbrb23eq5lsde4que5qj0u4o5a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.azumeDemo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
