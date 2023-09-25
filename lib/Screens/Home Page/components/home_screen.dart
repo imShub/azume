@@ -48,8 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
       // ignore: prefer_const_constructors
       Body(),
       Newsfeed(),
-      Newsfeed(),
-      Newsfeed(),
+      Body(),
+      Body(),
       MentorDeskScreen(),
     ];
     return Scaffold(
@@ -86,14 +86,12 @@ class _HomeScreenState extends State<HomeScreen> {
             child: IconButton(
               icon: Icon(Icons.message_rounded),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return ChatScreen();
-                    },
-                  ),
-                );
+                Future.delayed(Duration.zero).then((_) {
+                  Navigator.pushNamed(
+                    context,
+                    '/chatScreen',
+                  );
+                });
               },
             ),
           ),
@@ -330,6 +328,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          print("perss");
+        },
+        child: Icon(Icons.post_add_rounded),
       ),
       body: PageView(
         controller: _pageController,

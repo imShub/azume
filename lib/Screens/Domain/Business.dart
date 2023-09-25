@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mentorup_app/Screens/Chat%20Page/chat_screen.dart';
+import 'package:mentorup_app/Screens/Home%20Page/components/home_screen.dart';
+import 'package:mentorup_app/constants.dart';
 
 class BusinessPage extends StatefulWidget {
   @override
@@ -8,37 +11,76 @@ class BusinessPage extends StatefulWidget {
 Size? size;
 
 class _BusinessPageState extends State<BusinessPage> {
-  Widget appBar(context) {
-    size = MediaQuery.of(context).size;
-    return Row(
-      children: <Widget>[
-        GestureDetector(
-          onTap: () {
-            Navigator.pop(context);
-          },
-          child: Padding(
-            padding: EdgeInsets.only(left: 10),
-            child: Container(
-              padding: EdgeInsets.symmetric(vertical: 15),
-              child: Icon(
-                Icons.keyboard_arrow_left,
-                size: 30,
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
+  // Widget appBar(context) {
+  //   size = MediaQuery.of(context).size;
+  //   return Row(
+  //     children: <Widget>[
+  //       GestureDetector(
+  //         onTap: () {
+  //           Navigator.pop(context);
+  //         },
+  //         child: Padding(
+  //           padding: EdgeInsets.only(left: 10),
+  //           child: Container(
+  //             padding: EdgeInsets.symmetric(vertical: 15),
+  //             child: Icon(
+  //               Icons.keyboard_arrow_left,
+  //               size: 30,
+  //             ),
+  //           ),
+  //         ),
+  //       ),
+  //     ],
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 10,
+        backgroundColor: kPrimaryColor,
+        leading: IconButton(
+          icon: Icon(
+            Icons.keyboard_arrow_left_sharp,
+            color: Colors.white,
+            size: 28,
+          ),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+        // centerTitle: true,
+        title: Center(
+          child: Image(
+            image: AssetImage('assets/images/azume_horizontal_logo.png'),
+            height: 40,
+            // alignment: Alignment.centerRight,
+          ),
+        ),
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 7),
+            child: IconButton(
+              icon: Icon(Icons.message_rounded),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ChatScreen();
+                    },
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              appBar(context),
               Column(
                 children: [
                   Container(

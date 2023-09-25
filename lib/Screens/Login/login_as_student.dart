@@ -69,6 +69,7 @@ class _Login_as_studentState extends State<Login_as_student> {
                           .signInWithEmailAndPassword(
                               email: email, password: password)
                           .then((UserCredential user) {
+                        Navigator.of(context).pop();
                         Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
                             builder: (context) => HomeScreen(),

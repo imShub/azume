@@ -5,6 +5,12 @@ import 'package:mentorup_app/splashscreen.dart';
 import 'package:mentorup_app/Screens/Chat Page/chat_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 
+import 'Screens/Domain/Business.dart';
+import 'Screens/Domain/ECommerce.dart';
+import 'Screens/Domain/General.dart';
+import 'Screens/Domain/Hardware.dart';
+import 'Screens/Domain/Marketing.dart';
+import 'Screens/Domain/Software.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -20,12 +26,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'MentorUp',
+      title: 'Azume',
       theme: ThemeData(
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: Colors.white,
       ),
-      home: SplashScreen(),
+      // home: SplashScreen(),
+      initialRoute: '/welcome',
+      routes: {
+        '/welcome': (context) => SplashScreen(),
+        '/softwarePage': (context) => SoftwarePage(),
+        '/hardwarePage': (context) => HardwarePage(),
+        '/businessPage': (context) => BusinessPage(),
+        '/ecommercePage': (context) => ECommercePage(),
+        '/marketingPage': (context) => MarketingPage(),
+        '/generalPage': (context) => GeneralPage(),
+        '/chatScreen': (context) => ChatScreen(),
+      },
     );
   }
 }

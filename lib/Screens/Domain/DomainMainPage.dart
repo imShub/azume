@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mentorup_app/Screens/Chat%20Page/chat_screen.dart';
 import 'package:mentorup_app/Screens/Domain/Business.dart';
 import 'package:mentorup_app/Screens/Domain/ECommerce.dart';
 import 'package:mentorup_app/Screens/Domain/General.dart';
 import 'package:mentorup_app/Screens/Domain/Hardware.dart';
 import 'package:mentorup_app/Screens/Domain/Marketing.dart';
 import 'package:mentorup_app/Screens/Domain/Software.dart';
+import 'package:mentorup_app/Screens/Home%20Page/components/home_screen.dart';
+import 'package:mentorup_app/constants.dart';
 
 class DomainMainPage extends StatefulWidget {
   @override
@@ -17,53 +20,53 @@ class _DomainMainPageState extends State<DomainMainPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      // appBar: AppBar(
-      //   elevation: 10,
-      //   backgroundColor: kPrimaryColor,
-      //   leading: IconButton(
-      //     icon: Icon(
-      //       Icons.keyboard_arrow_left_sharp,
-      //       color: Colors.white,
-      //       size: 28,
-      //     ),
-      //     onPressed: () {
-      //       Navigator.push(
-      //         context,
-      //         MaterialPageRoute(
-      //           builder: (context) {
-      //             return HomeScreen();
-      //           },
-      //         ),
-      //       );
-      //     },
-      //   ),
-      //   // centerTitle: true,
-      //   title: Center(
-      //     child: Image(
-      //       image: AssetImage('assets/images/azume_horizontal_logo.png'),
-      //       height: 40,
-      //       // alignment: Alignment.centerRight,
-      //     ),
-      //   ),
-      //   actions: <Widget>[
-      //     Padding(
-      //       padding: const EdgeInsets.only(right: 7),
-      //       child: IconButton(
-      //         icon: Icon(Icons.message_rounded, color: Color(0xFF70BFFF)),
-      //         onPressed: () {
-      //           Navigator.push(
-      //             context,
-      //             MaterialPageRoute(
-      //               builder: (context) {
-      //                 return ChatScreen();
-      //               },
-      //             ),
-      //           );
-      //         },
-      //       ),
-      //     ),
-      //   ],
-      // ),
+      appBar: AppBar(
+        elevation: 10,
+        backgroundColor: kPrimaryColor,
+        leading: IconButton(
+          icon: Icon(
+            Icons.keyboard_arrow_left_sharp,
+            color: Colors.white,
+            size: 28,
+          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return HomeScreen();
+                },
+              ),
+            );
+          },
+        ),
+        // centerTitle: true,
+        title: Center(
+          child: Image(
+            image: AssetImage('assets/images/azume_horizontal_logo.png'),
+            height: 40,
+            // alignment: Alignment.centerRight,
+          ),
+        ),
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(right: 7),
+            child: IconButton(
+              icon: Icon(Icons.message_rounded),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ChatScreen();
+                    },
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
@@ -78,14 +81,7 @@ class _DomainMainPageState extends State<DomainMainPage> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return SoftwarePage();
-                            },
-                          ),
-                        );
+                        Navigator.pushNamed(context, '/softwarePage');
                       },
                       child: Container(
                         width: size.width / 2.4,
@@ -134,14 +130,7 @@ class _DomainMainPageState extends State<DomainMainPage> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return HardwarePage();
-                            },
-                          ),
-                        );
+                        Navigator.pushNamed(context, '/hardwarePage');
                       },
                       child: Container(
                         width: size.width / 2.4,
@@ -197,14 +186,7 @@ class _DomainMainPageState extends State<DomainMainPage> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return BusinessPage();
-                            },
-                          ),
-                        );
+                        Navigator.pushNamed(context, '/businessPage');
                       },
                       child: Container(
                         width: size.width / 2.4,
@@ -253,14 +235,7 @@ class _DomainMainPageState extends State<DomainMainPage> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return ECommercePage();
-                            },
-                          ),
-                        );
+                        Navigator.pushNamed(context, '/ecommercePage');
                       },
                       child: Container(
                         width: size.width / 2.4,
@@ -316,13 +291,9 @@ class _DomainMainPageState extends State<DomainMainPage> {
                   children: [
                     InkWell(
                       onTap: () {
-                        Navigator.push(
+                        Navigator.pushNamed(
                           context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return MarketingPage();
-                            },
-                          ),
+                          '/marketingPage',
                         );
                       },
                       child: Container(
@@ -372,13 +343,9 @@ class _DomainMainPageState extends State<DomainMainPage> {
                     ),
                     InkWell(
                       onTap: () {
-                        Navigator.push(
+                        Navigator.pushNamed(
                           context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return GeneralPage();
-                            },
-                          ),
+                          '/generalPage',
                         );
                       },
                       child: Container(
@@ -425,9 +392,6 @@ class _DomainMainPageState extends State<DomainMainPage> {
                     ),
                   ],
                 ),
-              ),
-              SizedBox(
-                height: 10,
               ),
             ],
           ),

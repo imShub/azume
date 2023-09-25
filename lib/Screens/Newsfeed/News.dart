@@ -23,8 +23,9 @@ class _NewsfeedState extends State<Newsfeed> {
             ),
             TextButton(
               onPressed: () {
-                launch(
-                    'https://timesofindia.indiatimes.com/city/visakhapatnam/19-women-led-startups-in-incubation-at-iim-v/articleshow/81608502.cms');
+                launchUrl(
+                    'https://timesofindia.indiatimes.com/city/visakhapatnam/19-women-led-startups-in-incubation-at-iim-v/articleshow/81608502.cms'
+                        as Uri);
               },
               child: news(
                   '19 Women-led startups in incubation at IIM-Visakhapatnam',
@@ -34,23 +35,25 @@ class _NewsfeedState extends State<Newsfeed> {
             ),
             TextButton(
               onPressed: () {
-                launch(
-                    'https://timesofindia.indiatimes.com/business/india-business/startups-tap-new-investors-amid-uncertainty-on-china-fdi/articleshow/81322710.cms');
+                launchUrl(
+                    'https://timesofindia.indiatimes.com/business/india-business/startups-tap-new-investors-amid-uncertainty-on-china-fdi/articleshow/81322710.cms'
+                        as Uri);
               },
               child: news('Startups tap new investors amid on China FDI',
                   'The Times Of India', '4-03-2021', 'notes.jpg.jpeg'),
             ),
             TextButton(
               onPressed: () {
-                launch(
-                    'https://timesofindia.indiatimes.com/city/guwahati/young-techie-wows-guwahati-with-start-up-on-drones/articleshow/81044379.cms');
+                launchUrl(
+                    'https://timesofindia.indiatimes.com/city/guwahati/young-techie-wows-guwahati-with-start-up-on-drones/articleshow/81044379.cms'
+                        as Uri);
               },
               child: news('Young techie wows Guwahati with start-up on drones',
                   'The Times Of India', '17-02-2021', 'drone.jpeg'),
             ),
             TextButton(
               onPressed: () {
-                launch('http://toi.in/GwrfFb/');
+                launchUrl('http://toi.in/GwrfFb/' as Uri);
               },
               child: news(
                   'Gujrat startups to solve problems of toy manufactures',
@@ -60,7 +63,7 @@ class _NewsfeedState extends State<Newsfeed> {
             ),
             TextButton(
               onPressed: () {
-                launch('http://toi.in/oc7h8b/');
+                launchUrl('http://toi.in/oc7h8b/' as Uri);
               },
               child: news(
                   'Startups will play crucial role in defence sector, says Rajnath Singh',
@@ -70,8 +73,9 @@ class _NewsfeedState extends State<Newsfeed> {
             ),
             TextButton(
               onPressed: () {
-                launch(
-                    'https://timesofindia.indiatimes.com/trend-tracking/union-budget-govt-allocates-rs-830-cr-for-fund-of-funds-for-startups/articleshow/80632756.cms');
+                launchUrl(
+                    'https://timesofindia.indiatimes.com/trend-tracking/union-budget-govt-allocates-rs-830-cr-for-fund-of-funds-for-startups/articleshow/80632756.cms'
+                        as Uri);
               },
               child: news(
                   'Union Budget:Govt allocates Rs 830 cr for Fund of Funds Startups',
@@ -81,7 +85,7 @@ class _NewsfeedState extends State<Newsfeed> {
             ),
             TextButton(
               onPressed: () {
-                launch('http://toi.in/D5n4Bb/');
+                launchUrl('http://toi.in/D5n4Bb/' as Uri);
               },
               child: news(
                   'India home to 21 unicorns valued at \$73.2 billion:Taranjit Singh Sandhu',
@@ -91,7 +95,7 @@ class _NewsfeedState extends State<Newsfeed> {
             ),
             TextButton(
               onPressed: () {
-                launch('http://toi.in/Qvm69a/');
+                launchUrl('http://toi.in/Qvm69a/' as Uri);
               },
               child: news(
                   'PM announces Rs 1,000-crore \'Startup India Seed Fund\'',

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mentorup_app/Screens/Chat%20Page/chat_screen.dart';
+import 'package:mentorup_app/constants.dart';
 
 class ECommercePage extends StatefulWidget {
   @override
@@ -38,7 +40,47 @@ class _ECommercePageState extends State<ECommercePage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              appBar(context),
+              AppBar(
+                elevation: 10,
+                backgroundColor: kPrimaryColor,
+                leading: IconButton(
+                  icon: Icon(
+                    Icons.keyboard_arrow_left_sharp,
+                    color: Colors.white,
+                    size: 28,
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
+                // centerTitle: true,
+                title: Center(
+                  child: Image(
+                    image:
+                        AssetImage('assets/images/azume_horizontal_logo.png'),
+                    height: 40,
+                    // alignment: Alignment.centerRight,
+                  ),
+                ),
+                actions: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(right: 7),
+                    child: IconButton(
+                      icon: Icon(Icons.message_rounded),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return ChatScreen();
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
               Column(
                 children: [
                   Container(

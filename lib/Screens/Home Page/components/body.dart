@@ -35,122 +35,30 @@ class _BodyState extends State<Body> {
   @override
   Widget build(BuildContext context) {
     size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Container(
-          //color: Color(0xFFF1E6FF),
-          child: Column(
-            children: [
-              SizedBox(
-                height: size.height * 0.03,
-              ),
-              Text(
-                "Features",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1,
-                    fontSize: 20),
-              ),
-              Divider(
-                height: 10,
-                color: Color(0xFF6F35A5),
-                endIndent: 130,
-                indent: 130,
-                thickness: 3,
-              ),
-              Padding(
-                padding: EdgeInsets.only(top: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return DomainMainPage();
-                            },
-                          ),
-                        );
-                      },
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                          side: BorderSide(color: Colors.white70, width: 1),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        elevation: 2,
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.all(15),
-                              child: Image.asset(
-                                "assets/images/domain1.png",
-                                height: 120,
-                                width: 120,
-                              ),
-                            ),
-                            Text(
-                              "Domain",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return MentorScreen();
-                            },
-                          ),
-                        );
-                      },
-                      child: Card(
-                        shape: RoundedRectangleBorder(
-                          side: BorderSide(color: Colors.white70, width: 1),
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        elevation: 2,
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.all(15),
-                              child: Image.asset(
-                                "assets/images/mentor1.png",
-                                height: 120,
-                                width: 120,
-                              ),
-                            ),
-                            Text(
-                              "Mentor",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 12,
-              ),
-              Row(
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Container(
+        //color: Color(0xFFF1E6FF),
+        child: Column(
+          children: [
+            SizedBox(
+              height: size.height * 0.03,
+            ),
+            Text(
+              "Features",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, letterSpacing: 1, fontSize: 20),
+            ),
+            Divider(
+              height: 10,
+              color: Color(0xFF6F35A5),
+              endIndent: 130,
+              indent: 130,
+              thickness: 3,
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   GestureDetector(
@@ -159,7 +67,7 @@ class _BodyState extends State<Body> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return FunderScreen();
+                            return DomainMainPage();
                           },
                         ),
                       );
@@ -175,13 +83,13 @@ class _BodyState extends State<Body> {
                           Padding(
                             padding: EdgeInsets.all(15),
                             child: Image.asset(
-                              "assets/images/funder.png",
+                              "assets/images/domain1.png",
                               height: 120,
                               width: 120,
                             ),
                           ),
                           Text(
-                            "Funder",
+                            "Domain",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
@@ -199,7 +107,7 @@ class _BodyState extends State<Body> {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return ForumScreen();
+                            return MentorScreen();
                           },
                         ),
                       );
@@ -215,13 +123,13 @@ class _BodyState extends State<Body> {
                           Padding(
                             padding: EdgeInsets.all(15),
                             child: Image.asset(
-                              "assets/images/forums.png",
+                              "assets/images/mentor1.png",
                               height: 120,
                               width: 120,
                             ),
                           ),
                           Text(
-                            "Forums",
+                            "Mentor",
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
@@ -235,181 +143,263 @@ class _BodyState extends State<Body> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 10,
-              ),
-              Divider(
-                color: Color(0xFFEEEEEE),
-                height: 30,
-                thickness: 10,
-              ),
-              Text(
-                "Latest News",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1,
-                    fontSize: 20),
-              ),
-              Divider(
-                height: 10,
-                color: Color(0xFF6F35A5),
-                endIndent: 130,
-                indent: 130,
-                thickness: 3,
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    NewsFeed(
-                        "Decoding Patym 'Blockbuster Loss...'",
-                        "Vjay Shekar Sharma led Patym has a spec... ",
-                        'March 29, 2021'),
-                    NewsFeed(
-                        "Decoding Patym 'Blockbuster Loss...'",
-                        "Vjay Shekar Sharma led Patym has a spec... ",
-                        'March 29, 2021'),
-                    NewsFeed(
-                        "Decoding Patym 'Blockbuster Loss...'",
-                        "Vjay Shekar Sharma led Patym has a spec... ",
-                        'March 29, 2021'),
-                    NewsFeed(
-                        "Decoding Patym 'Blockbuster Loss...'",
-                        "Vjay Shekar Sharma led Patym has a spec... ",
-                        'March 29, 2021'),
-                    NewsFeed(
-                        "Decoding Patym 'Blockbuster Loss...'",
-                        "Vjay Shekar Sharma led Patym has a spec... ",
-                        'March 29, 2021'),
-                  ],
+            ),
+            SizedBox(
+              height: 12,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return FunderScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(color: Colors.white70, width: 1),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    elevation: 2,
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(15),
+                          child: Image.asset(
+                            "assets/images/funder.png",
+                            height: 120,
+                            width: 120,
+                          ),
+                        ),
+                        Text(
+                          "Funder",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Divider(
-                color: Color(0xFFEEEEEE),
-                height: 30,
-                thickness: 10,
-              ),
-              Text(
-                "Webinars",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1,
-                    fontSize: 20),
-              ),
-              Divider(
-                height: 10,
-                color: Color(0xFF6F35A5),
-                endIndent: 145,
-                indent: 145,
-                thickness: 3,
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 10,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return ForumScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      side: BorderSide(color: Colors.white70, width: 1),
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Webinars('webinars1.jpg', ' Machine learning',
-                          'A webinar for learning machine learning from scratch'),
+                    elevation: 2,
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.all(15),
+                          child: Image.asset(
+                            "assets/images/forums.png",
+                            height: 120,
+                            width: 120,
+                          ),
+                        ),
+                        Text(
+                          "Forums",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                      ],
                     ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Webinars('webinars1.jpg', ' Machine learning',
-                          'A webinar for learning machine learning from scratch'),
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Webinars('webinars1.jpg', ' Machine learning',
-                          'A webinar for learning machine learning from scratch'),
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Webinars('webinars1.jpg', ' Machine learning',
-                          'A webinar for learning machine learning from scratch'),
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Webinars('webinars1.jpg', ' Machine learning',
-                          'A webinar for learning machine learning from scratch'),
-                    ),
-                  ],
+                  ),
                 ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Divider(
+              color: Color(0xFFEEEEEE),
+              height: 30,
+              thickness: 10,
+            ),
+            Text(
+              "Latest News",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, letterSpacing: 1, fontSize: 20),
+            ),
+            Divider(
+              height: 10,
+              color: Color(0xFF6F35A5),
+              endIndent: 130,
+              indent: 130,
+              thickness: 3,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  NewsFeed(
+                      "Decoding Patym 'Blockbuster Loss...'",
+                      "Vjay Shekar Sharma led Patym has a spec... ",
+                      'March 29, 2021'),
+                  NewsFeed(
+                      "Decoding Patym 'Blockbuster Loss...'",
+                      "Vjay Shekar Sharma led Patym has a spec... ",
+                      'March 29, 2021'),
+                  NewsFeed(
+                      "Decoding Patym 'Blockbuster Loss...'",
+                      "Vjay Shekar Sharma led Patym has a spec... ",
+                      'March 29, 2021'),
+                  NewsFeed(
+                      "Decoding Patym 'Blockbuster Loss...'",
+                      "Vjay Shekar Sharma led Patym has a spec... ",
+                      'March 29, 2021'),
+                  NewsFeed(
+                      "Decoding Patym 'Blockbuster Loss...'",
+                      "Vjay Shekar Sharma led Patym has a spec... ",
+                      'March 29, 2021'),
+                ],
               ),
-              SizedBox(
-                height: 40,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Divider(
+              color: Color(0xFFEEEEEE),
+              height: 30,
+              thickness: 10,
+            ),
+            Text(
+              "Webinars",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, letterSpacing: 1, fontSize: 20),
+            ),
+            Divider(
+              height: 10,
+              color: Color(0xFF6F35A5),
+              endIndent: 145,
+              indent: 145,
+              thickness: 3,
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 10,
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Webinars('webinars1.jpg', ' Machine learning',
+                        'A webinar for learning machine learning from scratch'),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Webinars('webinars1.jpg', ' Machine learning',
+                        'A webinar for learning machine learning from scratch'),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Webinars('webinars1.jpg', ' Machine learning',
+                        'A webinar for learning machine learning from scratch'),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Webinars('webinars1.jpg', ' Machine learning',
+                        'A webinar for learning machine learning from scratch'),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Webinars('webinars1.jpg', ' Machine learning',
+                        'A webinar for learning machine learning from scratch'),
+                  ),
+                ],
               ),
-              Divider(
-                color: Color(0xFFEEEEEE),
-                height: 30,
-                thickness: 10,
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Divider(
+              color: Color(0xFFEEEEEE),
+              height: 30,
+              thickness: 10,
+            ),
+            Text(
+              "Blogs",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, letterSpacing: 1, fontSize: 20),
+            ),
+            Divider(
+              height: 10,
+              color: Color(0xFF6F35A5),
+              endIndent: 161,
+              indent: 161,
+              thickness: 3,
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: Blogs(
+                        "5 ways blochchain marketing helps small business",
+                        'Blogs.png',
+                        'March 31, 2021'),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Blogs(
+                        "5 ways blochchain marketing helps small business",
+                        'Blogs.png',
+                        'March 31, 2021'),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Blogs(
+                        "5 ways blochchain marketing helps small business",
+                        'Blogs.png',
+                        'March 31, 2021'),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Blogs(
+                        "5 ways blochchain marketing helps small business",
+                        'Blogs.png',
+                        'March 31, 2021'),
+                  ),
+                ],
               ),
-              Text(
-                "Blogs",
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 1,
-                    fontSize: 20),
-              ),
-              Divider(
-                height: 10,
-                color: Color(0xFF6F35A5),
-                endIndent: 161,
-                indent: 161,
-                thickness: 3,
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    TextButton(
-                      onPressed: () {},
-                      child: Blogs(
-                          "5 ways blochchain marketing helps small business",
-                          'Blogs.png',
-                          'March 31, 2021'),
-                    ),
-                    TextButton(
-                      onPressed: () {},
-                      child: Blogs(
-                          "5 ways blochchain marketing helps small business",
-                          'Blogs.png',
-                          'March 31, 2021'),
-                    ),
-                    TextButton(
-                      onPressed: () {},
-                      child: Blogs(
-                          "5 ways blochchain marketing helps small business",
-                          'Blogs.png',
-                          'March 31, 2021'),
-                    ),
-                    TextButton(
-                      onPressed: () {},
-                      child: Blogs(
-                          "5 ways blochchain marketing helps small business",
-                          'Blogs.png',
-                          'March 31, 2021'),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 20,
-                width: size.width,
-              ),
-            ],
-          ),
+            ),
+            SizedBox(
+              height: 20,
+              width: size.width,
+            ),
+          ],
         ),
       ),
     );
